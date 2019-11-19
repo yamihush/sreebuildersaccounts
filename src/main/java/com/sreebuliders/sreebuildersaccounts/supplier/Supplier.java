@@ -1,6 +1,10 @@
 package com.sreebuliders.sreebuildersaccounts.supplier;
 
+import com.sreebuliders.sreebuildersaccounts.inwarddetails.InwardDetailsEntry;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "SUPPLIER")
@@ -12,6 +16,11 @@ public class Supplier {
     private String supAddress;
     private String supGstNo;
     private String supPhoneNo;
+
+
+
+    @OneToMany(targetEntity=InwardDetailsEntry.class, mappedBy="supplier")
+    private Set<InwardDetailsEntry> inwardDetailsEntries = new HashSet<InwardDetailsEntry>();
 
     public Supplier() {
 
@@ -71,5 +80,13 @@ public class Supplier {
 
     public void setSupPhoneNo(String supPhoneNo) {
         this.supPhoneNo = supPhoneNo;
+    }
+
+    public Set<InwardDetailsEntry> getInwardDetailsEntries() {
+        return inwardDetailsEntries;
+    }
+
+    public void setInwardDetailsEntries(Set<InwardDetailsEntry> inwardDetailsEntries) {
+        this.inwardDetailsEntries = inwardDetailsEntries;
     }
 }

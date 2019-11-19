@@ -11,8 +11,6 @@ import java.util.Date;
 @Table(name = "INWARD_ENTRY")
 public class InwardDetailsEntry {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int inwardId;
     private Date inwardDate;
     private String supBillNo;
@@ -107,8 +105,8 @@ public class InwardDetailsEntry {
         this.cashMode = cashMode;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SITE_ID", nullable = false, insertable = false, updatable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SITE_ID", referencedColumnName = "SITE_ID")
     public Site getSite() {
         return site;
     }
@@ -117,8 +115,8 @@ public class InwardDetailsEntry {
         this.site = site;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "MAT_ID", nullable = false, insertable = false, updatable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "MAT_ID", referencedColumnName = "MAT_ID")
     public Material getMaterial() {
         return material;
     }
@@ -126,8 +124,8 @@ public class InwardDetailsEntry {
     public void setMaterial(Material material) {
         this.material = material;
     }
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SUP_ID", nullable = false, insertable = false, updatable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SUP_ID", referencedColumnName = "SUP_ID")
     public Supplier getSupplier() {
         return supplier;
     }
