@@ -16,10 +16,6 @@ public class Site {
     private String siteAddress;
     private String sitePlan;
 
-   @OneToMany(targetEntity=InwardDetailsEntry.class, mappedBy="site")
-    private Set<InwardDetailsEntry> inwardDetailsEntries = new HashSet<InwardDetailsEntry>();
-
-
     public Site(){
 
     }
@@ -80,11 +76,5 @@ public class Site {
         this.sitePlan = sitePlan;
     }
 
-    public Set<InwardDetailsEntry> getInwardDetailsEntries() {
-        return inwardDetailsEntries;
-    }
 
-    public void setInwardDetailsEntries(Set<InwardDetailsEntry> inwardDetailsEntries) {
-        this.inwardDetailsEntries = inwardDetailsEntries;
-    }
 }

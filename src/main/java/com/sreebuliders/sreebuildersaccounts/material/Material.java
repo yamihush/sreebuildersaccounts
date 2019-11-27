@@ -15,10 +15,6 @@ public class Material {
     private String materialName;
     private String materialSubType;
 
-
-   @OneToMany(targetEntity=InwardDetailsEntry.class, mappedBy="material")
-    private Set<InwardDetailsEntry> inwardDetailsEntries = new HashSet<InwardDetailsEntry>();
-
     public Material(){
 
     }
@@ -57,11 +53,4 @@ public class Material {
         this.materialSubType = materialSubType;
     }
 
-    public Set<InwardDetailsEntry> getInwardDetailsEntries() {
-        return inwardDetailsEntries;
-    }
-
-    public void setInwardDetailsEntries(Set<InwardDetailsEntry> inwardDetailsEntries) {
-        this.inwardDetailsEntries = inwardDetailsEntries;
-    }
 }

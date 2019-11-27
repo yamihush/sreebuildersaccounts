@@ -17,11 +17,6 @@ public class Supplier {
     private String supGstNo;
     private String supPhoneNo;
 
-
-
-    @OneToMany(targetEntity=InwardDetailsEntry.class, mappedBy="supplier")
-    private Set<InwardDetailsEntry> inwardDetailsEntries = new HashSet<InwardDetailsEntry>();
-
     public Supplier() {
 
     }
@@ -82,11 +77,4 @@ public class Supplier {
         this.supPhoneNo = supPhoneNo;
     }
 
-    public Set<InwardDetailsEntry> getInwardDetailsEntries() {
-        return inwardDetailsEntries;
-    }
-
-    public void setInwardDetailsEntries(Set<InwardDetailsEntry> inwardDetailsEntries) {
-        this.inwardDetailsEntries = inwardDetailsEntries;
-    }
 }

@@ -105,7 +105,7 @@ public class InwardDetailsEntry {
         this.cashMode = cashMode;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "SITE_ID", referencedColumnName = "SITE_ID")
     public Site getSite() {
         return site;
@@ -115,7 +115,7 @@ public class InwardDetailsEntry {
         this.site = site;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "MAT_ID", referencedColumnName = "MAT_ID")
     public Material getMaterial() {
         return material;
@@ -124,7 +124,7 @@ public class InwardDetailsEntry {
     public void setMaterial(Material material) {
         this.material = material;
     }
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "SUP_ID", referencedColumnName = "SUP_ID")
     public Supplier getSupplier() {
         return supplier;
