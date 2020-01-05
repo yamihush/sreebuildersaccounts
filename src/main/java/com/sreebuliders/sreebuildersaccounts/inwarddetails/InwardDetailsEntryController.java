@@ -9,34 +9,34 @@ import java.util.Optional;
 @RestController
 public class InwardDetailsEntryController {
     @Autowired
-    private InwardDetailsEntryService inwardDetalsEntryService;
+    private InwardDetailsEntryService inwardDetailsEntryService;
 
     @RequestMapping("/inwarddetails")
     public List<InwardDetailsEntry> getAllInwardDetailsEntry(){
 
-        return inwardDetalsEntryService.getAllInwardDetailsEntry();
+        return inwardDetailsEntryService.getAllInwardDetailsEntry();
     }
 
     @RequestMapping("/inwarddetails/{id}")
     public Optional<InwardDetailsEntry> getInwardDetailsEntry(@PathVariable Long id){
-        return inwardDetalsEntryService.getInwardDetailsEntry(id);
+        return inwardDetailsEntryService.getInwardDetailsEntry(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/inwarddetails")
     public void addMaterial(@RequestBody InwardDetailsEntry inwardDetailsEntry){
 
-        inwardDetalsEntryService.addInwardDetailsEntry(inwardDetailsEntry);
+        inwardDetailsEntryService.addInwardDetailsEntry(inwardDetailsEntry);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/inwarddetails/{id}")
     public void deleteMaterial(@PathVariable Long id){
 
-        inwardDetalsEntryService.deleteInwardDetailsEntry(id);
+        inwardDetailsEntryService.deleteInwardDetailsEntry(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/inwarddetails")
     public void updateMaterial(@RequestBody InwardDetailsEntry inwardDetailsEntry){
 
-        inwardDetalsEntryService.updateInwardDetailsEntry(inwardDetailsEntry);
+        inwardDetailsEntryService.updateInwardDetailsEntry(inwardDetailsEntry);
     }
 }
